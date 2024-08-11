@@ -5,11 +5,7 @@ function toggleTheme() {
     const isDarkMode = body.classList.toggle('dark-mode');
     
     // Update the icon
-    if (isDarkMode) {
-        themeIcon.textContent = '☀️';
-    } else {
-        themeIcon.textContent = '🌙';
-    }
+    themeIcon.textContent = isDarkMode ? '☀️' : '🌙';
 
     // Persist the theme preference
     localStorage.setItem('dark-mode', isDarkMode);
@@ -27,11 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.remove('dark-mode');
         themeIcon.textContent = '🌙';
     }
-});
 
-// Existing theme toggle script remains the same
+    // Check login status and show the "Post" button if logged in
+    const isLoggedIn = localStorage.getItem('logged-in') === 'true';
+    const postButton = document.getElementById('post-button');
 
-document.addEventListener("DOMContentLoaded", function() {
+    if (isLoggedIn) {
+        postButton.style.display = 'inline-block';
+    }
+
+    // Handle login form submission
     const loginForm = document.getElementById('login-form');
     const loginError = document.getElementById('login-error');
 
@@ -42,9 +43,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Example validation (this should be replaced with real authentication logic)
+            // Example validation (replace with real authentication logic)
             if (username === "user" && password === "password") {
                 alert("Login successful!");
+                localStorage.setItem('logged-in', 'true');
                 window.location.href = "index.html"; // Redirect to the homepage after login
             } else {
                 loginError.textContent = "Invalid username or password.";
@@ -52,6 +54,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-
-    // Theme handling code here...
 });
