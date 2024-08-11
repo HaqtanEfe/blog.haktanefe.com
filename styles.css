@@ -48,6 +48,35 @@ footer {
     color: #555;
 }
 
+.read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5em;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.post-detail {
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+#back-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#back-link:hover {
+    text-decoration: underline;
+}
+
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -57,6 +86,6 @@ footer {
     background: #1f1f1f;
 }
 
-.dark-mode .post {
+.dark-mode .post, .dark-mode .post-detail {
     border-color: #444;
 }
