@@ -69,7 +69,7 @@ footer {
 
 .post h2 {
     margin-top: 0;
-    color: #333;
+    color: #333; /* Default color for light mode */
 }
 
 .date {
@@ -134,6 +134,10 @@ footer {
 .dark-mode .post, .dark-mode .post-detail {
     background: #1f1f1f; /* Darker background for posts in dark mode */
     border-color: #444;
+}
+
+.dark-mode .post h2 {
+    color: #fff; /* White color for post titles in dark mode */
 }
 
 .dark-mode .read-more, .dark-mode #back-link {
