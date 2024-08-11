@@ -2,32 +2,29 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to toggle between light and dark modes
     function toggleTheme() {
         const body = document.body;
-        const themeLabel = document.getElementById('theme-label');
+        const themeIcon = document.getElementById('theme-icon');
         const isDarkMode = body.classList.toggle('dark-mode');
         
-        // Update the label text
+        // Update the icon
         if (isDarkMode) {
-            themeLabel.textContent = 'Dark Mode';
+            themeIcon.textContent = '☀️';
         } else {
-            themeLabel.textContent = 'Light Mode';
+            themeIcon.textContent = '🌙';
         }
+
+        // Persist the theme preference
+        localStorage.setItem('dark-mode', isDarkMode);
     }
 
-    // Persist the theme preference using localStorage
-    const themeToggleSwitch = document.getElementById('switch');
+    // Check the stored preference and apply the theme
     const isDarkMode = localStorage.getItem('dark-mode') === 'true';
+    const themeIcon = document.getElementById('theme-icon');
 
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
-        themeToggleSwitch.checked = true;
-        document.getElementById('theme-label').textContent = 'Dark Mode';
+        themeIcon.textContent = '☀️';
     } else {
         document.body.classList.remove('dark-mode');
-        document.getElementById('theme-label').textContent = 'Light Mode';
+        themeIcon.textContent = '🌙';
     }
-
-    themeToggleSwitch.addEventListener('change', function() {
-        toggleTheme();
-        localStorage.setItem('dark-mode', themeToggleSwitch.checked);
-    });
 });
