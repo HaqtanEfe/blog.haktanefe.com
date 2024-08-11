@@ -38,7 +38,9 @@ header h1 {
 }
 
 main {
-    padding: 1em;
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
 }
 
 footer {
@@ -53,12 +55,27 @@ footer {
 
 .post {
     border: 1px solid #ddd;
-    margin-bottom: 1em;
-    padding: 1em;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    background: #fff; /* White background for the post */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.post:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.post h2 {
+    margin-top: 0;
+    color: #333;
 }
 
 .date {
-    color: #555;
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 1em;
 }
 
 .read-more {
@@ -66,17 +83,26 @@ footer {
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
-    margin-top: 0.5em;
+    margin-top: 1em;
+    border: 2px solid #007bff; /* Border for better visibility */
+    padding: 0.5em 1em;
+    border-radius: 4px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 .read-more:hover {
-    text-decoration: underline;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
 }
 
 .post-detail {
     border: 1px solid #ddd;
-    margin-bottom: 1em;
-    padding: 1em;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #back-link {
@@ -84,10 +110,16 @@ footer {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
+    border: 2px solid #007bff;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #back-link:hover {
-    text-decoration: underline;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
 }
 
 .dark-mode {
@@ -100,5 +132,16 @@ footer {
 }
 
 .dark-mode .post, .dark-mode .post-detail {
+    background: #1f1f1f; /* Darker background for posts in dark mode */
     border-color: #444;
+}
+
+.dark-mode .read-more, .dark-mode #back-link {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.dark-mode .read-more:hover, .dark-mode #back-link:hover {
+    background-color: #007bff;
+    color: #fff;
 }
