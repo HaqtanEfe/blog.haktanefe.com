@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (post.description.length > maxLength) {
                     description.textContent = `${post.description.substring(0, maxLength)}...`;
                     const readMore = document.createElement('a');
-                    readMore.href = 'post.html';
+                    readMore.href = post.url; // Use the URL from the JSON
                     readMore.classList.add('read-more');
                     readMore.textContent = 'Read More';
                     description.appendChild(readMore);
