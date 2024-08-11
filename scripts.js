@@ -1,3 +1,12 @@
+
+
+// Dark mode toggle function
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const postsContainer = document.getElementById('posts');
 
@@ -37,13 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error loading posts:', error);
         });
-
-    // Dark mode toggle function
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-        const themeIcon = document.getElementById('theme-icon');
-        themeIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
-    }
 
     // Handle theme toggle
     document.getElementById('theme-icon').addEventListener('click', toggleTheme);
