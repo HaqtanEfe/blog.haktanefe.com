@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const postsContainer = document.getElementById('posts');
 
+    // Function to toggle dark mode
+    function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+        const themeIcon = document.getElementById('theme-icon');
+        themeIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    }
+
+    // Fetch and display posts
     fetch('posts.json')
         .then(response => response.json())
         .then(posts => {
@@ -38,13 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error loading posts:', error);
         });
 
-    // Dark mode toggle function
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-        const themeIcon = document.getElementById('theme-icon');
-        themeIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
-    }
+    // Initialize the theme toggle icon
+    const themeIcon = document.getElementById('theme-icon');
+    themeIcon.addEventListener('click', toggleTheme);
 
-    // Handle theme toggle
-    document.getElementById('theme-icon').addEventListener('click', toggleTheme);
+    // Set the initial theme icon based on the current theme
+    themeIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
 });
