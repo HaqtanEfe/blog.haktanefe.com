@@ -24,7 +24,9 @@ header h1 {
 
 #logo {
     height: 50px; /* Adjust the size of the logo as needed */
-    width: auto;
+    width: 50px; /* Ensure the width matches the height for a perfect circle */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
 }
 
 #theme-icon {
