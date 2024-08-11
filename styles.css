@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background: #333;
+    background: rgb(34, 36, 36); /* Matching background color */
     color: white;
     padding: 1em;
     text-align: center;
@@ -29,7 +29,7 @@ main {
 }
 
 footer {
-    background: #333;
+    background: rgb(34, 36, 36); /* Matching background color */
     color: white;
     text-align: center;
     padding: 0.5em;
@@ -83,7 +83,7 @@ footer {
 }
 
 .dark-mode header, .dark-mode footer {
-    background: #1f1f1f;
+    background: rgb(34, 36, 36); /* Matching background color */
 }
 
 .dark-mode .post, .dark-mode .post-detail {
