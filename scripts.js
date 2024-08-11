@@ -13,26 +13,31 @@ function toggleTheme() {
 
 // Ensure the correct theme is applied on page load
 document.addEventListener("DOMContentLoaded", function() {
-    const isDarkMode = localStorage.getItem('dark-mode') === 'true';
+    // Theme toggle logic, only if the theme icon is present on the page
     const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) {
+        const isDarkMode = localStorage.getItem('dark-mode') === 'true';
 
-    if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-        themeIcon.textContent = '☀️';
-    } else {
-        document.body.classList.remove('dark-mode');
-        themeIcon.textContent = '🌙';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            themeIcon.textContent = '☀️';
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeIcon.textContent = '🌙';
+        }
     }
 
     // Check login status and show the "Post" button if logged in
-    const isLoggedIn = localStorage.getItem('logged-in') === 'true';
     const postButton = document.getElementById('post-button');
+    if (postButton) {
+        const isLoggedIn = localStorage.getItem('logged-in') === 'true';
 
-    if (isLoggedIn) {
-        postButton.style.display = 'inline-block';
+        if (isLoggedIn) {
+            postButton.style.display = 'inline-block';
+        }
     }
 
-    // Handle login form submission
+    // Handle login form submission, only if the login form is present
     const loginForm = document.getElementById('login-form');
     const loginError = document.getElementById('login-error');
 
